@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MacroScope indicator analysis" />
+  <title>Analysis | MacroScope</title>
+  <link rel="stylesheet" href="analysis.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Return to MacroScope dashboard">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span>MacroScope</span>
+    </a>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Dashboard</a>
+  </header>
+
+  <main id="analysisPage" class="page-shell">
+    <section class="analysis-hero">
+      <div class="hero-copy">
+        <p id="indicatorGroup" class="eyebrow">Indicator analysis</p>
+        <h1 id="indicatorTitle">Loading analysis…</h1>
+        <p id="indicatorDescription" class="standfirst"></p>
+        <div class="meta-row">
+          <span id="updatedDate">MacroScope research</span>
+          <span aria-hidden="true">•</span>
+          <span id="readTime">5 min read</span>
+        </div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <span class="orbit-line"></span>
+        <span class="orbit-dot"></span>
+        <strong id="heroUnit">%</strong>
+        <small>unit of measure</small>
+      </div>
+    </section>
+
+    <section class="analysis-chart-card" aria-labelledby="chartHeading">
+      <div class="chart-card-header">
+        <div>
+          <p class="eyebrow">The indicator at a glance</p>
+          <h2 id="chartHeading">Cross-country trend</h2>
+        </div>
+        <div class="chart-key" aria-label="Chart regions">
+          <span><i class="key-uk"></i>UK</span>
+          <span><i class="key-us"></i>US</span>
+          <span><i class="key-eu"></i>Euro Area</span>
+          <span><i class="key-china"></i>China</span>
+        </div>
+      </div>
+      <div class="analysis-chart-frame">
+        <canvas id="analysisChart" aria-label="Indicator comparison chart" role="img"></canvas>
+      </div>
+      <div class="chart-footer">
+        <span id="chartPeriod">2019–2025</span>
+        <span id="chartSource">Dashboard data</span>
+      </div>
+    </section>
+
+    <section class="snapshot" aria-label="Analysis snapshot">
+      <article class="snapshot-card">
+        <span>What it measures</span>
+        <strong id="measureLabel">Economic conditions</strong>
+      </article>
+      <article class="snapshot-card">
+        <span>Primary lens</span>
+        <strong id="lensLabel">Cross-country comparison</strong>
+      </article>
+      <article class="snapshot-card accent-card">
+        <span>Coverage</span>
+        <strong>UK · US · Euro Area · China</strong>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <article class="article-card">
+        <div class="article-heading">
+          <p class="eyebrow">The MacroScope view</p>
+          <h2 id="articleTitle">The story behind the numbers</h2>
+        </div>
+
+        <!-- ============================================================
+             WRITE YOUR ARTICLE BELOW.
+             For indicator-specific articles, edit the `article` field in
+             analysis.js. This fallback remains visible until you do.
+             ============================================================ -->
+        <div id="articleBody" class="article-body">
+          <div class="editor-note">
+	<h3>Analysis coming soon :)</h3>
+          </div>
+        </div>
+      </article>
+
+      <aside class="side-column">
+        <section class="side-card">
+          <p class="eyebrow">Reading guide</p>
+          <h2>Questions to answer</h2>
+          <ul id="questionList" class="question-list"></ul>
+        </section>
+        <section class="side-card muted-card">
+          <p class="eyebrow">Method note</p>
+          <p>Compare the direction, pace, and turning points—not only the latest value. Check the dashboard’s source label before citing a figure.</p>
+        </section>
+      </aside>
+    </div>
+
+    <nav class="analysis-nav" aria-label="More analysis">
+      <div>
+        <p class="eyebrow">Keep exploring</p>
+        <h2>Move to another indicator</h2>
+      </div>
+      <div class="indicator-links" id="indicatorLinks"></div>
+    </nav>
+  </main>
+
+  <script src="analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MacroScope Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="loadingOverlay" class="loading-overlay" aria-live="polite">
+    <div class="loader-panel">
+      <div class="loader-ring" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">Fetching data</p>
+        <h1>Please wait while we prepare the dashboard</h1>
+        <p id="loadingText">Checking public macroeconomic sources and cached data...</p>
+      </div>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-copy">
+      <p class="eyebrow">Macroeconomic data monitor</p>
+      <h1>MacroScope Dashboard</h1>
+      <p>Compare macroeconomic conditions across the UK, US, Euro Area, and China.</p>
+    </div>
+    <div class="status-box">
+      <span id="dataStatus">Preparing data...</span>
+      <button id="refreshButton" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="stats" class="stats" aria-label="Key UK readings"></section>
+
+    <section class="controls" aria-label="Dashboard controls">
+      <label>
+        Region view
+        <select id="regionSelect">
+          <option value="all">UK, US, Euro Area, China</option>
+          <option value="western">UK, US, Euro Area</option>
+          <option value="ukus">UK & US</option>
+          <option value="china">China, US, UK</option>
+          <option value="ukOnly">UK Only</option>
+          <option value="usOnly">US Only</option>
+          <option value="chinaOnly">China Focus</option>
+        </select>
+      </label>
+
+      <label>
+        Indicator group
+        <select id="groupSelect">
+          <option value="core">Key macroeconomic indicators</option>
+          <option value="external">External sector</option>
+          <option value="financial">Financial conditions</option>
+          <option value="confidence">Confidence & housing</option>
+          <option value="all">Everything</option>
+        </select>
+      </label>
+
+      <label>
+        Time window
+        <select id="windowSelect">
+          <option value="5">Last 5 years</option>
+          <option value="8">Last 8 years</option>
+          <option value="12">Last 12 years</option>
+        </select>
+      </label>
+    </section>
+
+    <p class="source-note">
+      Live data is attempted from public ONS, FRED, and World Bank endpoints. If a source is slow or unavailable, the dashboard renders within five seconds using cached or fallback data.
+    </p>
+
+    <section id="charts" class="charts" aria-label="Macroeconomic charts"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
